@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CYK_Algorithm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style type="text/css">
+    body {
+      margin: 0;
+    }
+    #container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<h1>Result Generated Tree</h1>
+<div id="container"></div>
+<script src="sigma.min.js"></script>
+<script src="plugins/sigma.parsers.json.min.js"></script>
+<script src="plugins/sigma.layout.forceAtlas2.min.js"></script>
+<script src="data.js"></script>
+<script>
+    var i,
+        s,
+        o,
+        d = 0.5;
+    let json = data;
+    let g = JSON.parse(json);
+    s = new sigma({
+        graph: g,
+        container: 'container',
+        settings: {
+            drawEdges: true
+        }
+    });
+    // Start the ForceAtlas2 algorithm:
+    s.startForceAtlas2({worker: true, barnesHutOptimize: false});
+</script>
+</body>
+</html>

@@ -6,10 +6,15 @@ class Generator {
 
   bool hasArgument(String arg) {
     for (var argument in arguments) {
-      if (argument == arg) {
+      if (argument.contains(arg)) {
         return true;
       }
     }
     return false;
+  }
+
+  @override
+  String toString() {
+    return label;
   }
 }
